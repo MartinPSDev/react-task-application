@@ -1,11 +1,14 @@
 import { useState } from "react";
 
-function TaskForm() {
+function TaskForm({createTask}) {
   const [title, settitle] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title);
+    const newTask = {
+        title
+    }
+    createTask(newTask)
   };
 
   return (
